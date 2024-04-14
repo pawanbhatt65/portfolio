@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     const backdropContactModelElm=document.querySelector(".backdrop-contact-model")
     const modelContainerElm=document.querySelector(".model-container")
     const closeContactModelElm=document.querySelectorAll(".closeContactModel")
+    const windowScrolledElm=document.getElementById("windowScrolled")
+    const currentWordElm=document.getElementById("currentWord")
 
     const enterNameHandler=(event, error, errorMessage) =>{
         const nameValue=event.target.value;
@@ -265,9 +267,11 @@ document.addEventListener("DOMContentLoaded",()=>{
         if(this.window.pageYOffset>300) {
             bottomToTopElm.classList.add("show")
             headerSectionElm.classList.add("scroll-ref")
+            windowScrolledElm.classList.add("window-scrolled")
         } else {
             bottomToTopElm.classList.remove("show")
             headerSectionElm.classList.remove("scroll-ref")
+            windowScrolledElm.classList.remove("window-scrolled")
         }
     })
     bottomToTopElm.addEventListener("click", function(e){
@@ -287,4 +291,15 @@ document.addEventListener("DOMContentLoaded",()=>{
             }
         })
     })
+
+    currentWordElm.innerText=""
+    const words=["HTML", "JavaScript", "React JS", "Laravel"];
+    let index=0;
+    const interval = setInterval(() => {
+        currentWordElm.innerText=words[index]
+        index=(index+1) % words.length
+      }, 2000);
+      setTimeout(() => {
+        clearInterval(interval);
+    }, 10000);
 })
