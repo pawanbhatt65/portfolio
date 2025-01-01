@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     downloadCvBtn.addEventListener("click",e=>{
         e.preventDefault()
         const link=document.createElement("a")
-        link.download="assets/cv/pawan-dev.pdf"
+        link.download="pawan-dev.pdf"
         link.href="assets/cv/pawan-dev.pdf"
         link.dispatchEvent(new MouseEvent("click"))
     })
