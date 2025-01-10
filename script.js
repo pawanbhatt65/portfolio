@@ -119,8 +119,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     downloadCvBtn.addEventListener("click",e=>{
         e.preventDefault()
         const link=document.createElement("a")
-        link.download="pawan-dev.pdf"
-        link.href="assets/cv/pawan-dev.pdf"
+        link.download="pawan-php-laravel.pdf"
+        link.href="assets/cv/pawan-php-laravel.pdf"
         link.dispatchEvent(new MouseEvent("click"))
     })
 
@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     })
 
     currentWordElm.innerText=""
-    const words=["HTML", "JavaScript", "React JS", "Laravel"];
+    const words=["HTML", "JavaScript", "PHP", "Laravel"];
     let index=0;
     const interval = setInterval(() => {
         currentWordElm.innerText=words[index]
